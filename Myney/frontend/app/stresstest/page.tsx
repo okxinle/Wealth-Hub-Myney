@@ -1,7 +1,6 @@
 "use client"
 
-import { TopNav } from "@/components/dashboard/top-nav"
-import { MacroStressTester } from "@/components/dashboard/macro-stress-tester"
+import { TopNav, AdvisorSuite } from "@/components/dashboard"
 
 export default function Page() {
   return (
@@ -9,7 +8,7 @@ export default function Page() {
       <TopNav />
 
       <main className="container mx-auto px-4 py-8 max-w-7xl">
-        <MacroStressTester />
+        <AdvisorSuite mode="stress" />
       </main>
     </div>
   )

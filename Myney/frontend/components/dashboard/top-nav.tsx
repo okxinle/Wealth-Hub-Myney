@@ -1,7 +1,7 @@
 "use client"
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/ActionUI"
 import { useTheme } from "@/components/theme-provider"
 import { Wallet, Moon, Sun, User, LayoutDashboard, BarChart3, Zap } from "lucide-react"
 import Link from "next/link"
