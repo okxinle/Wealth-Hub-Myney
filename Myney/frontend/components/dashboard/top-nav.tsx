@@ -2,16 +2,13 @@
 
 import Image from "next/image" 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/ActionUI"
-import { useTheme } from "@/components/theme-provider"
-import { Wallet, Moon, Sun, User, LayoutDashboard, BarChart3, Zap } from "lucide-react"
+import { Wallet, User, LayoutDashboard, BarChart3, Zap } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { useViewMode } from "@/lib/view-mode-context"
 
 export function TopNav() {
-  const { theme, setTheme } = useTheme()
   const pathname = usePathname()
   const router = useRouter()
   const { viewMode, setViewMode } = useViewMode()
@@ -119,15 +116,6 @@ export function TopNav() {
             {/* Account Section */}
             <div className="h-6 w-px bg-[#E2E8F0]" />
             <div className="flex items-center gap-3">
-              <Button
-                variant="ghost" 
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="size-9 rounded-full text-[#1A1A1B] hover:bg-blue-50 hover:text-[#4A89FF]"
-              >
-                <Sun className="size-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute size-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              </Button>
               <Avatar className="size-9 border border-[#E2E8F0]">
                 <AvatarFallback><User className="size-4" /></AvatarFallback>
               </Avatar>
