@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image" 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/ActionUI"
 import { useTheme } from "@/components/theme-provider"
@@ -42,10 +43,24 @@ export function TopNav() {
           
           {/* Logo Section */}
           <div className="flex min-w-fit items-center gap-3">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-[#4A89FF] shadow-sm">
-              <Wallet className="size-5 text-white" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-[#1A1A1B]">Myney</span>
+            <Link href="/overview" className="flex items-center gap-3">
+              {/* 1. Increased to size-14 (56px) for more 'headroom' */}
+              <div className="relative size-14 overflow-hidden rounded-2xl border-none!"> 
+                <Image 
+                  src="/logo.png" 
+                  alt="Myney Logo" 
+                  fill
+                  // 2. scale-[3.0]: Backed off the zoom so the arrow tip and roof fit
+                  // 3. translate-y-[3px]: Nudges the icon DOWN to give the roof breathing room
+                  // 4. mix-blend-multiply: Keeps that white background invisible
+                  className="object-contain scale-[3.0] translate-y-[3px] mix-blend-multiply transform-gpu border-none!" 
+                />
+              </div>
+              
+              <span className="text-2xl font-bold tracking-tight text-[#1A1A1B]">
+                Myney
+              </span>
+            </Link>
           </div>
 
           {/* Seamless Center Navigation - No Box */}
